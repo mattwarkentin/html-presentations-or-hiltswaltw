@@ -1,0 +1,10 @@
+.title-bg {
+  background-image: url("../imgs/carpentry.jpg");
+  background-size: cover;
+}
+
+.opaque-box {
+  height: 800px;
+  width: 1000px;
+  opacity: 0.8;
+}

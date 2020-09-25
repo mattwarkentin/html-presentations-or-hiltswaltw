@@ -3,40 +3,54 @@
   <head>
     <title>HTML Presentations or: How I Learned to Stop Worrying and Love the Web</title>
     <meta charset="utf-8" />
-    <meta name="author" content=".b[Matthew T. Warkentin] .blue[@mattwrkntn]" />
+    <meta name="author" content=".b[Matthew T. Warkentin], MSc. Ph.D (c)" />
     <meta name="date" content="2020-10-21" />
     <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-clipboard\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times-circle\" style=\"color: #F94144\"><\/i>"})</script>
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-webcam/webcam.js"></script>
     <script id="xaringanExtra-webcam-options" type="application/json">{"width":"300","height":"300","margin":"1em"}</script>
     <link href="libs/animate.css/animate.min.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <script src="libs/peerjs/peerjs.min.js"></script>
+    <script src="libs/tiny.toast/toast.min.js"></script>
+    <link href="libs/xaringanExtra-broadcast/broadcast.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-broadcast/broadcast.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
-    <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
     <script src="libs/shareon/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
-    <meta name="description" content=""/>
-    <meta name="generator" content=""/>
+    <meta name="description" content="Building impressive presentations using modern web technologies"/>
+    <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="mattwarkentin/html-presentations-or-hiltswaltw"/>
-    <meta name="twitter:title" content=""/>
-    <meta name="twitter:description" content=""/>
-    <meta name="twitter:url" content=""/>
+    <meta name="twitter:title" content="HTML Presentations or: How I Learned to Stop Worrying and Love the Web"/>
+    <meta name="twitter:description" content="Building impressive presentations using modern web technologies"/>
+    <meta name="twitter:url" content="https://mattwarkentin.github.io/html-presentations-or-hiltswaltw/"/>
     <meta name="twitter:image:src" content=""/>
-    <meta name="twitter:image:alt" content=""/>
+    <meta name="twitter:image:alt" content="Title slide for the talk titled HTML Presentations or: How I Learned to Stop Worrying and Love the Web"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@mattwrkntn"/>
     <meta name="twitter:site" content="@mattwrkntn"/>
-    <meta property="og:title" content=""/>
-    <meta property="og:description" content=""/>
-    <meta property="og:url" content=""/>
+    <meta property="og:title" content="HTML Presentations or: How I Learned to Stop Worrying and Love the Web"/>
+    <meta property="og:description" content="Building impressive presentations using modern web technologies"/>
+    <meta property="og:url" content="https://mattwarkentin.github.io/html-presentations-or-hiltswaltw/"/>
     <meta property="og:image" content=""/>
-    <meta property="og:image:alt" content=""/>
+    <meta property="og:image:alt" content="Title slide for the talk titled HTML Presentations or: How I Learned to Stop Worrying and Love the Web"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Matthew T. Warkentin"/>
+    <script src="libs/fitvids/fitvids.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/leader-line@1.0.5/leader-line.min.js"></script>
     <link rel="stylesheet" href="css/xaringan-theme.css" type="text/css" />
     <link rel="stylesheet" href="css/style.css" type="text/css" />
   </head>
@@ -60,14 +74,158 @@ class: left middle hide-count title-bg
 <div class="talk-meta">
 <div class="talk-title">
 <h1>HTML Presentations or: How I Learned to Stop Worrying and Love the Web</h1>
-<p>enter text here</p>
+<p class="talk-subtitle i dark-grey">Building impressive presentations with modern web technologies</p>
 </div>
 <div class="talk-author">
-.b[Matthew T. Warkentin] .blue[&amp;commat;mattwrkntn]
-<br/>
-<span>.small[.blue-medium[Lunenfeld-Tanenbaum Research Institute]]</span>
+.b[Matthew T. Warkentin], MSc. Ph.D (c)
+<div class="talk-social pl3 pt2 pb2 lh-copy">&lt;div&gt;
+  &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#000000;" viewBox="0 0 512 512"&gt;&lt;path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/&gt;&lt;/svg&gt;
+  &lt;a href="mailto:warkentin@lunenfeld.ca"&gt;warkentin@lunenfeld.ca&lt;/a&gt;
+&lt;/div&gt;&lt;div&gt;
+  &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#000000;" viewBox="0 0 496 512"&gt;&lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/&gt;&lt;/svg&gt;
+  &lt;a href="https://github.com/mattwarkentin"&gt;@mattwarkentin&lt;/a&gt;
+&lt;/div&gt;&lt;div&gt;
+  &lt;svg style="height:0.8em;top:.04em;position:relative;fill:#000000;" viewBox="0 0 512 512"&gt;&lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/&gt;&lt;/svg&gt;
+  &lt;a href="https://twitter.com/mattwrkntn"&gt;@mattwrkntn&lt;/a&gt;
+&lt;/div&gt;</div>
+Lunenfeld-Tanenbaum Research Institute, .b[.sinai-blue[Sinai] .sinai-orange[Health] .sinai-red[System]]
 </div>
 <div class="talk-date">October 21, 2020</div>
+</div>
+
+???
+
+Here is an example of presenter notes that only the presenter sees!
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+<div class="bg-white-o90 shadow-3 h-75 pl3 lh-copy f2 i pt6">
+<p>Dr. Strangelove, is a 1964 black comedy film that satirizes the Cold War fears of a nuclear conflict between the Soviet Union and the United States.</p>
+</div>
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+<div class="bg-white-o90 shadow-3 h-75 pl3 lh-copy f2 i pt6">
+<p>.red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .pink[United States].</p>
+</div>
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+<div class="bg-white-o90 shadow-3 h-75 pl3 lh-copy f2 i pt3">
+<p>.red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .pink[United States].</p>
+<p>.red[HTML Presentations], are a .blue[2020 presentation tool] that solves the .green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .pink[dynamic web technologies].</p>
+</div>
+
+---
+
+class: highlight-last-item
+
+# Why, though?
+
+- Making presentations should be fun
+
+--
+
+- Sharing presentations should be easy
+
+--
+
+- I enjoy writing code (and you do too!)
+
+--
+
+- I am not very creative (with a GUI, at least)
+
+---
+
+class: highlight-last-item
+
+# What do we want?
+
+- Good defaults, quick victories
+
+--
+
+- Easy integration of code and output
+
+--
+
+- Highly configurable, if desired
+
+--
+
+- Availability of dynamic web technologies
+
+---
+
+# The solution
+
+- Its pretty obvious, isn't it?
+
+<img src="imgs/html.png" class="center w-30"/>
+
+---
+
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="https://remarkjs.com/#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+
+---
+
+# How it all works...
+
+<img src="imgs/markdown.png" class="w-40 center" id="md"/>
+
+---
+
+# How it all works...
+
+<img src="imgs/rmarkdown.png" class="w-30 center" id="rmd"/>
+
+---
+
+# How it all works...
+
+<img src="imgs/rmarkdown.png" class="w-20 center" id="rmd"/><button class="f2 center mt4 pt2 pb2 pl3 pr3" id="knit-btn">
+<span>
+<img src="imgs/knitr.png" class="knit-btn-logo"/>
+Knit
+</span>
+</button>
+
+---
+
+<div class="shareagain" style="min-width:300px;margin:1em auto;">
+<iframe src="https://slides.yihui.org/xaringan/#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<script>fitvids('.shareagain', {players: 'iframe'});</script>
+</div>
+
+---
+
+background-image: url("imgs/code.jpeg")
+background-size: cover
+
+<div class="bg-white-o90 shadow-3 h-75 pl3 center middle">
+<h1 class="pt6">Live Coding Demonstration</h1>
 </div>
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

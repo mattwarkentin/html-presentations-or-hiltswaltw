@@ -1,9 +1,9 @@
 ---
 title: "HTML Presentations or: How I Learned to Stop Worrying and Love the Web"
-subtitle: "enter text here"
+subtitle: "Building impressive presentations with modern web technologies"
 author: 
-  - .b[Matthew T. Warkentin] .blue[&commat;mattwrkntn]
-institute: ".small[.blue-medium[Lunenfeld-Tanenbaum Research Institute]]"
+  - .b[Matthew T. Warkentin], MSc. Ph.D (c)
+institute: "Lunenfeld-Tanenbaum Research Institute, .b[.sinai-blue[Sinai] .sinai-orange[Health] .sinai-red[System]]"
 date: 'October 21, 2020'
 output:
   xaringan::moon_reader:
@@ -11,6 +11,8 @@ output:
     css: 
       - css/xaringan-theme.css
       - css/style.css
+    includes:
+      in_header: "head.html"
     seal: false
     nature:
       titleSlideClass: ["bottom", "left"]
@@ -37,18 +39,184 @@ htmltools::withTags(
     div(
       class = "talk-title",
       h1(rmarkdown::metadata$title),
-      p(rmarkdown::metadata$subtitle)
+      p(rmarkdown::metadata$subtitle, class = "talk-subtitle i dark-grey")
     ),
     div(
-      class = "talk-author",
-      paste(rmarkdown::metadata$author, collapse = " <br> "),
-      br(),
-      span(paste(rmarkdown::metadata$institute, collapse = ", "))
+      class = "talk-author", 
+      rmarkdown::metadata$author,
+      div(
+        class = "talk-social pl3 pt2 pb2 lh-copy",
+        paste0(
+          div(fontawesome::fa('envelope', fill = '#000000'),
+            a(href = "mailto:warkentin@lunenfeld.ca",
+              "warkentin@lunenfeld.ca")),
+          div(fontawesome::fa('github', fill = '#000000'),
+            a(href = "https://github.com/mattwarkentin",
+              "@mattwarkentin")),
+          div(fontawesome::fa('twitter', fill = '#000000'),
+            a(href = "https://twitter.com/mattwrkntn",
+              "@mattwrkntn")),
+          collapse = "<br/>"
+          )
+        ),
+      rmarkdown::metadata$institute
     ),
     div(
       class = "talk-date",
       knitr::knit(text = rmarkdown::metadata$date, quiet = TRUE)
     )
   )
+)
+```
+
+???
+
+Here is an example of presenter notes that only the presenter sees!
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+```{r echo=FALSE}
+opaque_box(
+  class = "lh-copy f2 i pt6",
+  p("Dr. Strangelove, is a 1964 black comedy film that satirizes the Cold War fears of a nuclear conflict between the Soviet Union and the United States.")
+)
+```
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+```{r echo=FALSE}
+opaque_box(
+  class = "lh-copy f2 i pt6",
+  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .pink[United States].")
+)
+```
+
+---
+
+background-image: url("imgs/strangelove.png")
+background-size: contain
+class: middle hide-count
+
+```{r echo=FALSE}
+opaque_box(
+  class = "lh-copy f2 i pt3",
+  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .pink[United States]."),
+  p(".red[HTML Presentations], are a .blue[2020 presentation tool] that solves the .green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .pink[dynamic web technologies].")
+)
+```
+
+---
+
+class: highlight-last-item
+
+# Why, though?
+
+- Making presentations should be fun
+
+--
+
+- Sharing presentations should be easy
+
+--
+
+- I enjoy writing code (and you do too!)
+
+--
+
+- I am not very creative (with a GUI, at least)
+
+---
+
+class: highlight-last-item
+
+# What do we want?
+
+- Good defaults, quick victories
+
+--
+
+- Easy integration of code and output
+
+--
+
+- Highly configurable, if desired
+
+--
+
+- Availability of dynamic web technologies
+
+---
+
+# The solution
+
+- Its pretty obvious, isn't it?
+
+```{r echo=FALSE}
+img(src = "imgs/html.png", class = "center w-30")
+```
+
+---
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan("https://remarkjs.com/#1")
+```
+
+---
+
+# How it all works...
+
+```{r echo=FALSE}
+img(src = "imgs/markdown.png", class = "w-40 center", id = "md")
+```
+
+---
+
+# How it all works...
+
+```{r echo=FALSE}
+img(src = "imgs/rmarkdown.png", class = "w-30 center", id = "rmd")
+```
+
+---
+
+# How it all works...
+
+```{r echo=FALSE}
+img(src = "imgs/rmarkdown.png", class = "w-20 center", id = "rmd")
+tags$button(
+  span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit"), 
+  class = "f2 center mt4 pt2 pb2 pl3 pr3", id = "knit-btn"
+  )
+```
+
+---
+
+```{r echo=FALSE}
+xaringanExtra::embed_xaringan("https://slides.yihui.org/xaringan/#1")
+```
+
+---
+
+background-image: url("imgs/code.jpeg")
+background-size: cover
+
+```{r echo = FALSE}
+opaque_box(
+  class = "center middle",
+  h1("Live Coding Demonstration", class = "pt6")
 )
 ```

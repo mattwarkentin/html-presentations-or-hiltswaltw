@@ -12,7 +12,7 @@ output:
       - css/xaringan-theme.css
       - css/style.css
     includes:
-      in_header: "head.html"
+      in_header: head.html
     seal: false
     nature:
       titleSlideClass: ["bottom", "left"]
@@ -21,6 +21,8 @@ output:
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: true
+      navigation:
+        scroll: false
 ---
 
 name: title
@@ -145,6 +147,10 @@ class: highlight-last-item
 
 # What do we want?
 
+- Diffable plain-text files
+
+--
+
 - Good defaults, quick victories
 
 --
@@ -177,10 +183,14 @@ xaringanExtra::embed_xaringan("https://remarkjs.com/#1")
 
 ---
 
-# How it all works...
+background-image: url("imgs/code.jpeg")
+background-size: cover
 
-```{r echo=FALSE}
-img(src = "imgs/markdown.png", class = "w-40 center", id = "md")
+```{r echo = FALSE}
+opaque_box(
+  class = "center middle",
+  h1("Live Coding Demonstration", class = "pt6")
+)
 ```
 
 ---
@@ -196,11 +206,67 @@ img(src = "imgs/rmarkdown.png", class = "w-30 center", id = "rmd")
 # How it all works...
 
 ```{r echo=FALSE}
-img(src = "imgs/rmarkdown.png", class = "w-20 center", id = "rmd")
+img(src = "imgs/rmarkdown.png", 
+    class = "w-30 center relative", id = "rmd-move-left")
 tags$button(
-  span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit"), 
-  class = "f2 center mt4 pt2 pb2 pl3 pr3", id = "knit-btn"
+  span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit", 
+       class = "tc"),
+  class = "f3 br3 pl3 pr3 pt2 pb2 knit-btn-appear", id = "knit-btn"
   )
+img(src = "imgs/rmarkdown-doc.png", class = "w-40 image-appear", 
+    id = "rmd-doc")
+```
+
+---
+
+# How it all works...
+
+```{r echo=FALSE}
+img(src = "imgs/rmarkdown.png", 
+        class = "w-20")
+tags$button(
+  span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit", 
+       class = "tc"),
+  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1", id = "knit-btn2"
+  )
+img(src = "imgs/rmarkdown-doc.png", class = "w-40 spin-doc", 
+    id = "rmd-doc2")
+img(src = "imgs/markdown-doc.png", id = "md-doc", 
+    class = "w-40")
+```
+
+---
+
+# How it all works...
+
+```{r echo=FALSE}
+img(src = "imgs/xaringan.png", 
+        class = "w-20")
+tags$button(
+  span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
+       class = "tc"),
+  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1", id = "pandoc-btn"
+  )
+img(src = "imgs/markdown-doc.png", id = "md-doc2", 
+    class = "w-40")
+```
+
+---
+
+# How it all works...
+
+```{r echo=FALSE}
+img(src = "imgs/xaringan.png", 
+        class = "w-20")
+tags$button(
+  span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
+       class = "tc"),
+  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1 pandoc-fade", id = "pandoc-btn"
+  )
+img(src = "imgs/markdown-doc.png", id = "md-doc2", 
+    class = "w-40 md-spin")
+img(src = "imgs/html-doc.png", id = "html-doc", 
+    class = "w-40 html-appear")
 ```
 
 ---

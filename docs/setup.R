@@ -50,7 +50,7 @@ htmltools::tagList(
     meta_social(
       title = "HTML Presentations or: How I Learned to Stop Worrying and Love the Web",
       url = "https://mattwarkentin.github.io/html-presentations-or-hiltswaltw/",
-      image = "https://github.com/mattwarkentin/html-presentations-or-hiltswaltw/blob/master/docs/social-card.png",
+      image = "https://raw.githubusercontent.com/mattwarkentin/html-presentations-or-hiltswaltw/master/docs/share-card.png?token=AGUJHLJ7BVFJPVF4VHFITH27PNUBG",
       image_alt = "Title slide for the talk titled HTML Presentations or: How I Learned to Stop Worrying and Love the Web",
       og_type = "website",
       og_author = "Matthew T. Warkentin",

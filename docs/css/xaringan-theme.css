@@ -36,7 +36,7 @@
   --base-font-size: 16px;
   --text-font-size: 2rem;
   --code-font-size: 2rem;
-  --code-inline-font-size: 2;
+  --code-inline-font-size: 2rem;
   --header-h1-font-size: 5rem;
   --header-h2-font-size: 4rem;
   --header-h3-font-size: 3rem;
@@ -112,7 +112,7 @@ a, a > code {
   color: #AAAAAA;
   bottom: 60px;
   padding-right: 4em;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .remark-code-line-highlighted {
   background-color: var(--code-highlight-color);

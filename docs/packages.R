@@ -1,4 +1,5 @@
 library(htmltools)
+library(reactable)
 library(tidyverse)
 library(glue)
 library(fs)

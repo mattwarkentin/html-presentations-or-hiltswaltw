@@ -103,7 +103,7 @@ class: middle hide-count
 ```{r echo=FALSE}
 opaque_box(
   class = "lh-copy f2 i pt6",
-  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .pink[United States].")
+  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .dark-green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .dark-pink[United States].")
 )
 ```
 
@@ -116,8 +116,8 @@ class: middle hide-count
 ```{r echo=FALSE}
 opaque_box(
   class = "lh-copy f2 i pt3",
-  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .pink[United States]."),
-  p(".red[HTML Presentations], are a .blue[2020 presentation tool] that solves the .green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .pink[dynamic web technologies].")
+  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .dark-green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .dark-pink[United States]."),
+  p(".red[HTML Presentations], are a .blue[2020 presentation tool] that solves the .dark-green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .dark-pink[dynamic web technologies].")
 )
 ```
 
@@ -132,6 +132,10 @@ class: highlight-last-item
 --
 
 - Sharing presentations should be easy
+
+???
+
+- Sharing: Sharing a web link is easy, it also means you maintain some form of governance over your presentation and future changes
 
 --
 
@@ -151,6 +155,10 @@ class: highlight-last-item
 
 --
 
+- Focus more on content than format
+
+--
+
 - Good defaults, quick victories
 
 --
@@ -167,13 +175,51 @@ class: highlight-last-item
 
 ---
 
-# The solution
+```{r reactable-table, echo=FALSE}
+yes <- fontawesome::fa("check-circle", fill = "green")
+no <- fontawesome::fa("minus-circle", fill = "red")
+maybe <- fontawesome::fa("question-circle", fill = "gray")
 
-- Its pretty obvious, isn't it?
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "Plain-text files", no, yes, yes,
+  "Content focused", no, yes, yes,
+  "Good defaults", yes, yes, yes,
+  "Integrate code/output", no, yes, yes,
+  "Highly configurable", yes, no, yes,
+  "Dynamic content", maybe, no, yes
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+--
 
 ```{r echo=FALSE}
-img(src = "imgs/html.png", class = "center w-30")
+img(src = "imgs/html.png", id = "html-logo")
 ```
+
+---
+
+# .remark-font[remark.js]
+
+- A `javascript` library that provides...
+
+> A simple, in-browser, Markdown-driven slideshow tool targeted at people who know their way around HTML and CSS
+
+--
+
+.i[So what does that mean?]
+
+- Write slide content in simple markdown language*
+
+- View presentation in a browser as HTML
 
 ---
 
@@ -195,78 +241,61 @@ opaque_box(
 
 ---
 
-# How it all works...
+# But what is missing?
 
-```{r echo=FALSE}
-img(src = "imgs/rmarkdown.png", class = "w-30 center", id = "rmd")
-```
+- Easy integration of code and output!!
+
+- `R Markdown` to the rescue
+  + Combines the best of markdown-driven typesetting with the power of the `R` language
+  + Native support for over 30 languages, including `R` and `python`
+  + Document configuration via YAML front-matter
 
 ---
 
 # How it all works...
 
 ```{r echo=FALSE}
-img(src = "imgs/rmarkdown.png", 
-    class = "w-30 center relative", id = "rmd-move-left")
+img(src = "imgs/rmarkdown.png", class = "rmd1")
+```
+
+---
+
+```{r echo=FALSE}
+img(src = "imgs/rmarkdown.png", class = "rmd1 move-rmd-left")
 tags$button(
   span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit", 
        class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 knit-btn-appear", id = "knit-btn"
-  )
-img(src = "imgs/rmarkdown-doc.png", class = "w-40 image-appear", 
-    id = "rmd-doc")
+  class = "f3 br3 pl3 pr3 pt2 pb2 knit-btn knit-btn-appear")
+img(src = "imgs/rmarkdown-doc.png", class = "w-40 rmd-doc rmd-appear")
 ```
 
 ---
 
-# How it all works...
-
 ```{r echo=FALSE}
-img(src = "imgs/rmarkdown.png", 
-        class = "w-20")
+img(src = "imgs/rmarkdown.png", class = "rmd2")
 tags$button(
   span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit", 
        class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1", id = "knit-btn2"
-  )
-img(src = "imgs/rmarkdown-doc.png", class = "w-40 spin-doc", 
-    id = "rmd-doc2")
-img(src = "imgs/markdown-doc.png", id = "md-doc", 
-    class = "w-40")
+  class = "f3 br3 pl3 pr3 pt2 pb2 knit-btn knit-btn-fade")
+tags$button(
+  span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
+       class = "tc"),
+  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1 pandoc-btn pandoc-appear")
+img(src = "imgs/rmarkdown-doc.png", class = "w-40 rmd-doc spin-rmd")
+img(src = "imgs/markdown-doc.png", class = "w-40 md-doc md-appear")
 ```
 
 ---
 
-# How it all works...
-
 ```{r echo=FALSE}
-img(src = "imgs/xaringan.png", 
-        class = "w-20")
+img(src = "imgs/rmarkdown.png", class = "rmd2 rmd-fade")
+img(src = "imgs/xaringan.png", class = "xaringan xaringan-appear")
 tags$button(
   span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
        class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1", id = "pandoc-btn"
-  )
-img(src = "imgs/markdown-doc.png", id = "md-doc2", 
-    class = "w-40")
-```
-
----
-
-# How it all works...
-
-```{r echo=FALSE}
-img(src = "imgs/xaringan.png", 
-        class = "w-20")
-tags$button(
-  span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
-       class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1 pandoc-fade", id = "pandoc-btn"
-  )
-img(src = "imgs/markdown-doc.png", id = "md-doc2", 
-    class = "w-40 md-spin")
-img(src = "imgs/html-doc.png", id = "html-doc", 
-    class = "w-40 html-appear")
+  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1 pandoc-btn pandoc-fade")
+img(src = "imgs/markdown-doc.png", class = "w-40 md-doc md-spin")
+img(src = "imgs/html-doc.png", class = "w-40 html-doc html-doc-appear")
 ```
 
 ---
@@ -286,3 +315,23 @@ opaque_box(
   h1("Live Coding Demonstration", class = "pt6")
 )
 ```
+
+---
+
+class: lh-solid
+
+# Important Resources
+
+- .f3[[`{xaringanthemer}`](https://pkg.garrickadenbuie.com/xaringanthemer/) - .i[Give your xaringan slides some style with xaringanthemer]]
+
+- .f3[[`{xaringanExtra}`](https://pkg.garrickadenbuie.com/xaringanExtra/#/) - .i[A playground of extensions for xaringan]]
+
+- .f3[[`remark.js` Wiki](https://github.com/gnab/remark/wiki)]
+
+- .f3[[Tachyons](https://tachyons.io/docs/) - .i[Create fast loading, highly readable, and 100% responsive interfaces with as little css as possible]]
+
+- .f3[[Google Fonts](https://fonts.google.com/) - .i[Making the web more beautiful, fast, and open through great typography]]
+
+- .f3[[Unsplash](https://unsplash.com/) - .i[Free high-resolution photos]]
+
+- .f3[[FontAwesome](https://fontawesome.com/) - .i[The web's most popular icon set and toolkit]]

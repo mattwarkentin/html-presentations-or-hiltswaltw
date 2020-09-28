@@ -1,3 +1,12 @@
+:root {
+  --sinai-blue: rgb(74, 199, 233);
+  --sinai-red: rgb(255, 35, 60);
+  --sinai-orange: rgb(255, 190, 0);
+  --opaque-box-color: rgba(255, 255, 255, 0.9);
+  --remark-font: "Yanone Kaffeesatz";
+}
+
+/* TITLE SLIDE */
 .title-bg {
   background-image: url("../imgs/pencil-crayons.jpg");
   background-size: cover;
@@ -22,14 +31,16 @@
   font-size: 1.5rem;
 }
 .sinai-blue {
-  color: rgb(74, 199, 233);
+  color: var(--sinai-blue);
 }
 .sinai-red {
-  color: rgb(255, 35, 60);
+  color: var(--sinai-red);
 }
 .sinai-orange {
-  color: rgb(255, 190, 0);
+  color: var(--sinai-orange);
 }
+
+/* GENERAL STYLING */
 .highlight-last-item > ul > li,
 .highlight-last-item > ol > li {
   opacity: 0.4;
@@ -42,56 +53,102 @@
   display: none;
 }
 .bg-white-o90 {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--opaque-box-color);
 }
 .remark-font {
-  font-family: "Yanone Kaffeesatz";
+  font-family: var(--remark-font);
 }
-#rmd {
-  cursor: pointer;
+
+/* HTML LOGO */
+#html-logo {
+  position: absolute;
+  top: 125px;
+  right: 150px;
+  width: 40%;
 }
-#rmd-move-left {
-  animation-name: rmd-move-left;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+
+/* Compare presentations */
+.feature-table {
+  line-height: 2.5;
+  background-color: transparent;
 }
-@keyframes rmd-move-left {
-  0% {
-    transform: translateX(0px) scale(1);
-  }
-  100% {
-    transform: translateX(-433px) translateY(-62px) scale(0.6667);
-  }
+
+/* RMD > MD > HTML Transitions */
+.rmd1 {
+  width: 30%;
+  position: absolute;
+  left: 400px;
+  top: 150px;
+}
+.rmd2 {
+  width: calc(0.8 * 30%);
+  position: absolute;
+  left: 137px;
+  top: 130px;
 }
 .knit-btn-logo {
   height: 30px;
   vertical-align: middle;
 }
+.knit-btn {
+  cursor: pointer;
+  position: absolute;
+  left: 225px;
+  bottom: 150px;
+}
+.rmd-doc {
+  position: absolute;
+  right: 200px;
+  top: 100px;
+}
 .pandoc-btn-logo {
   height: 30px;
   vertical-align: middle;
 }
-#pandoc-btn {
+.pandoc-btn {
   cursor: pointer;
-  margin-left: 25px;
-}
-#knit-btn {
-  cursor: pointer;
-  margin-left: 50px;
-  margin-top: -115px;
   position: absolute;
+  left: 200px;
+  bottom: 150px;
 }
-#knit-btn2 {
-  cursor: pointer;
-  margin-left: 50px;
-  animation-name: knit-button-fade;
+.md-doc {
+  position: absolute;
+  right: 200px;
+  top: 100px;
+}
+.html-doc {
+  opacity: 0;
+  position: absolute;
+  right: 200px;
+  top: 100px;
+}
+.xaringan {
+  width: calc(0.8 * 30%);
+  position: absolute;
+  left: 137px;
+  top: 130px;
+}
+
+/* CSS ANIMATIONS */
+.move-rmd-left {
+  animation-name: move-rmd-left;
   animation-duration: 1s;
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: move-rmd-left;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes move-rmd-left {
+  0% {
+    transform: translateX(0px) scale(1);
+  }
+  100% {
+    transform: translateX(-300px) translateY(-62px) scale(0.8);
+  }
 }
 .knit-btn-appear {
   opacity: 0;
@@ -101,6 +158,12 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
+  -webkit-animation-name: knit-button-show;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
 }
 @keyframes knit-button-show {
   0% {
@@ -110,47 +173,20 @@
     opacity: 1;
   }
 }
-@keyframes knit-button-fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-#rmd-doc {
-  position: absolute;
-  margin-top: -450px;
-  margin-left: 600px;
-}
-#rmd-doc2 {
-  position: absolute;
-  margin-top: -387px;
-  margin-left: 600px;
-}
-#md-doc {
-  position: absolute;
-  margin-top: -387px;
-  margin-left: 600px;
-}
-#md-doc2 {
-  position: absolute;
-  margin-top: -387px;
-  margin-left: 600px;
-}
-#html-doc {
-  position: absolute;
-  margin-top: -387px;
-  margin-left: 600px;
-}
-.image-appear {
+.rmd-appear {
+  opacity: 0;
   animation-name: img-appear;
   animation-duration: 1s;
   animation-delay: 1s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  opacity: 0;
+  -webkit-animation-name: img-appear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
 }
 @keyframes img-appear {
   0% {
@@ -160,23 +196,73 @@
     opacity: 1;
   }
 }
-.spin-doc {
-  animation-name: spin-doc;
+.knit-btn-fade {
+  animation-name: knit-button-fade;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  -webkit-animation-name: knit-button-fade;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+}
+@keyframes knit-button-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.pandoc-appear {
+  opacity: 0;
+  animation-name: pandoc-appear;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  -webkit-animation-name: pandoc-appear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
+}
+@keyframes pandoc-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.spin-rmd {
+  animation-name: spin-rmd;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  -webkit-animation-name: spin-rmd;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
 }
-@keyframes spin-doc {
+@keyframes spin-rmd {
   0% {
     transform: rotateY(0deg);
     opacity: 1;
   }
   50% {
-    transform: rotateY(360deg);
+    transform: rotateY(720deg);
     opacity: 1;
   }
-  99% {
+  80% {
     opacity: 1;
   }
   100% {
@@ -184,7 +270,7 @@
     opacity: 0;
   }
 }
-#md-doc {
+.md-appear {
   opacity: 0;
   animation-name: md-appear;
   animation-duration: 1s;
@@ -192,6 +278,12 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  -webkit-animation-name: md-appear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
 }
 @keyframes md-appear {
   0% {
@@ -201,21 +293,27 @@
     opacity: 1;
   }
 }
-#html-doc {
-  opacity: 0;
-  animation-name: html-appear;
+.pandoc-fade {
+  cursor: pointer;
+  animation-name: pandoc-fade;
   animation-duration: 1s;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  -webkit-animation-name: pandoc-fade;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in;
 }
-@keyframes html-appear {
+@keyframes pandoc-fade {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 .md-spin {
@@ -224,6 +322,11 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  -webkit-animation-name: md-spin;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
 }
 @keyframes md-spin {
   0% {
@@ -231,10 +334,10 @@
     opacity: 1;
   }
   50% {
-    transform: rotateY(360deg);
+    transform: rotateY(720deg);
     opacity: 1;
   }
-  99% {
+  80% {
     opacity: 1;
   }
   100% {
@@ -242,21 +345,70 @@
     opacity: 0;
   }
 }
-.pandoc-fade {
-  cursor: pointer;
-  margin-left: 50px;
-  animation-name: pandoc-fade;
+.html-doc-appear {
+  animation-name: html-doc-appear;
   animation-duration: 1s;
   animation-delay: 2s;
-  animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: html-doc-appear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
 }
-@keyframes pandoc-fade {
+@keyframes html-doc-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.rmd-fade {
+  animation-name: rmd-fade;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: rmd-fade;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes rmd-fade {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+.xaringan-appear {
+  opacity: 0;
+  animation-name: xaringan-appear;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: xaringan-appear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes xaringan-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

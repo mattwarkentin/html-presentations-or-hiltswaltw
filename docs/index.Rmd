@@ -117,7 +117,7 @@ class: middle hide-count
 opaque_box(
   class = "lh-copy f2 i pt3",
   p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .dark-green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .dark-pink[United States]."),
-  p(".red[HTML Presentations], are a .blue[2020 presentation tool] that solves the .dark-green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .dark-pink[dynamic web technologies].")
+  p(".red[HTML Presentations], are a .blue[2020 presentation tool] that solves the .dark-green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .dark-pink[dynamic technologies].")
 )
 ```
 
@@ -171,11 +171,69 @@ class: highlight-last-item
 
 --
 
-- Availability of dynamic web technologies
+- Ability to include dynamic content
 
 ---
 
-```{r reactable-table, echo=FALSE}
+class: hide-count
+
+```{r reactable-table1, echo=FALSE}
+yes <- fontawesome::fa("check-circle", fill = "green")
+no <- fontawesome::fa("minus-circle", fill = "red")
+maybe <- fontawesome::fa("question-circle", fill = "gray")
+
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "Plain-text files", no, "", "",
+  "Content focused", no, "", "",
+  "Good defaults", yes, "", "",
+  "Integrate code/output", no, "", "",
+  "Highly configurable", yes, "", "",
+  "Dynamic content", maybe, "", ""
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+---
+
+class: hide-count
+
+```{r reactable-table2, echo=FALSE}
+yes <- fontawesome::fa("check-circle", fill = "green")
+no <- fontawesome::fa("minus-circle", fill = "red")
+maybe <- fontawesome::fa("question-circle", fill = "gray")
+
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "Plain-text files", no, yes, "",
+  "Content focused", no, yes, "",
+  "Good defaults", yes, yes, "",
+  "Integrate code/output", no, yes, "",
+  "Highly configurable", yes, no, "",
+  "Dynamic content", maybe, no, ""
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+---
+
+class: hide-count
+
+```{r reactable-table3, echo=FALSE}
 yes <- fontawesome::fa("check-circle", fill = "green")
 no <- fontawesome::fa("minus-circle", fill = "red")
 maybe <- fontawesome::fa("question-circle", fill = "gray")
@@ -223,6 +281,8 @@ img(src = "imgs/html.png", id = "html-logo")
 
 ---
 
+class: hide-count
+
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan("https://remarkjs.com/#1")
 ```
@@ -231,6 +291,7 @@ xaringanExtra::embed_xaringan("https://remarkjs.com/#1")
 
 background-image: url("imgs/code.jpeg")
 background-size: cover
+class: hide-count
 
 ```{r echo = FALSE}
 opaque_box(
@@ -246,7 +307,7 @@ opaque_box(
 - Easy integration of code and output!!
 
 - `R Markdown` to the rescue
-  + Combines the best of markdown-driven typesetting with the power of the `R` language
+  + Combines the best of markdown-driven content creation with the power of the `R` language
   + Native support for over 30 languages, including `R` and `python`
   + Document configuration via YAML front-matter
 

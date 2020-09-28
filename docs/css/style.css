@@ -8,7 +8,7 @@
 
 /* TITLE SLIDE */
 .title-bg {
-  background-image: url("../imgs/pencil-crayons.jpg");
+  background-image: url(https://images.unsplash.com/photo-1499892477393-f675706cbe6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
   background-size: cover;
 }
 .talk-title {
@@ -62,14 +62,14 @@
 /* HTML LOGO */
 #html-logo {
   position: absolute;
-  top: 125px;
-  right: 150px;
+  top: 140px;
+  right: 175px;
   width: 40%;
 }
 
 /* Compare presentations */
 .feature-table {
-  line-height: 2.5;
+  line-height: 1.6;
   background-color: transparent;
 }
 
@@ -96,6 +96,9 @@
   left: 225px;
   bottom: 150px;
 }
+.knit-btn:hover {
+  background-color: #ddd;
+}
 .rmd-doc {
   position: absolute;
   right: 200px;
@@ -111,6 +114,9 @@
   left: 200px;
   bottom: 150px;
 }
+.pandoc-btn:hover {
+  background-color: #ddd;
+}
 .md-doc {
   position: absolute;
   right: 200px;
@@ -119,14 +125,26 @@
 .html-doc {
   opacity: 0;
   position: absolute;
-  right: 200px;
+  right: 150px;
   top: 100px;
 }
-.xaringan {
+.html-logo {
   width: calc(0.8 * 30%);
   position: absolute;
-  left: 137px;
-  top: 130px;
+  left: 150px;
+  top: 200px;
+}
+.md {
+  width: 30%;
+  position: absolute;
+  left: 110px;
+  top: 180px;
+}
+#xaringan-logo {
+  position: absolute;
+  width: 40%;
+  right: 60px;
+  top: 75px;
 }
 
 /* CSS ANIMATIONS */
@@ -389,22 +407,22 @@
     opacity: 0;
   }
 }
-.xaringan-appear {
+.html-appear {
   opacity: 0;
-  animation-name: xaringan-appear;
+  animation-name: html-appear;
   animation-duration: 1s;
   animation-delay: 2s;
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  -webkit-animation-name: xaringan-appear;
+  -webkit-animation-name: html-appear;
   -webkit-animation-duration: 1s;
   -webkit-animation-delay: 2s;
   -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
 }
-@keyframes xaringan-appear {
+@keyframes html-appear {
   0% {
     opacity: 0;
   }

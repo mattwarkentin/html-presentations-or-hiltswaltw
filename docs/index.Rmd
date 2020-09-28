@@ -103,7 +103,7 @@ class: middle hide-count
 ```{r echo=FALSE}
 opaque_box(
   class = "lh-copy f2 i pt6",
-  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .dark-green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .dark-pink[United States].")
+  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that .gold[satirizes] the .dark-green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .dark-pink[United States].")
 )
 ```
 
@@ -116,8 +116,8 @@ class: middle hide-count
 ```{r echo=FALSE}
 opaque_box(
   class = "lh-copy f2 i pt3",
-  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that satirizes the .dark-green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .dark-pink[United States]."),
-  p(".red[HTML Presentations], are a .blue[2020 presentation tool] that solves the .dark-green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .dark-pink[dynamic technologies].")
+  p(".red[Dr. Strangelove], is a .blue[1964 black comedy film] that .gold[satirizes] the .dark-green[Cold War] fears of a .purple[nuclear conflict] between the .orange[Soviet Union] and the .dark-pink[United States]."),
+  p(".red[HTML Presentations], are a .blue[2020 presentation tool] that .gold[solves] the .dark-green[Grad Students'] fears of an .purple[internal conflict] between .orange[static presentations] and .dark-pink[dynamic web  technologies].")
 )
 ```
 
@@ -177,16 +177,26 @@ class: highlight-last-item
 
 class: hide-count
 
-```{r reactable-table1, echo=FALSE}
-yes <- fontawesome::fa("check-circle", fill = "green")
-no <- fontawesome::fa("minus-circle", fill = "red")
-maybe <- fontawesome::fa("question-circle", fill = "gray")
+```{r logos, echo=FALSE}
+yes <- as.character(fontawesome::fa("check-circle", fill = "green"))
+no <- as.character(fontawesome::fa("minus-circle", fill = "red"))
+maybe <- as.character(fontawesome::fa("question-circle", fill = "gray"))
 
+keynote <- "<img src=https://help.apple.com/assets/5ED5635E0946229C50055A35/5ED563600946229C50055A3C/en_AU/d5f8b6940519eda6a205437d9c39c996.png class='w-20'>"
+ppt <- "<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Microsoft_PowerPoint_2013_logo.svg/1200px-Microsoft_PowerPoint_2013_logo.svg.png class='w-20'>"
+kp <- glue("{ppt}{keynote}")
+pdf <- "<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/1200px-PDF_file_icon.svg.png class='w-20'>"
+html <- "<img src=imgs/html.png class='w-20'>"
+```
+
+```{r reactable-table1, echo=FALSE}
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
   "Plain-text files", no, "", "",
   "Content focused", no, "", "",
   "Good defaults", yes, "", "",
+  "Transportability", no, "", "",
   "Integrate code/output", no, "", "",
   "Highly configurable", yes, "", "",
   "Dynamic content", maybe, "", ""
@@ -206,15 +216,13 @@ tribble(
 class: hide-count
 
 ```{r reactable-table2, echo=FALSE}
-yes <- fontawesome::fa("check-circle", fill = "green")
-no <- fontawesome::fa("minus-circle", fill = "red")
-maybe <- fontawesome::fa("question-circle", fill = "gray")
-
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
   "Plain-text files", no, yes, "",
   "Content focused", no, yes, "",
   "Good defaults", yes, yes, "",
+  "Transportability", no, yes, "",
   "Integrate code/output", no, yes, "",
   "Highly configurable", yes, no, "",
   "Dynamic content", maybe, no, ""
@@ -234,15 +242,13 @@ tribble(
 class: hide-count
 
 ```{r reactable-table3, echo=FALSE}
-yes <- fontawesome::fa("check-circle", fill = "green")
-no <- fontawesome::fa("minus-circle", fill = "red")
-maybe <- fontawesome::fa("question-circle", fill = "gray")
-
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
   "Plain-text files", no, yes, yes,
   "Content focused", no, yes, yes,
   "Good defaults", yes, yes, yes,
+  "Transportability", no, yes, yes,
   "Integrate code/output", no, yes, yes,
   "Highly configurable", yes, no, yes,
   "Dynamic content", maybe, no, yes
@@ -277,7 +283,25 @@ img(src = "imgs/html.png", id = "html-logo")
 
 - Write slide content in simple markdown language*
 
-- View presentation in a browser as HTML
+- View presentation in a browser as a web page
+
+---
+
+# Building on standard Markdown...
+
+If you already know how to use standard Markdown you are 90% of the way there...
+
+--
+
+- `---` to separate slides
+
+- `--` to reveal content slide-by-slide
+
+- `???` to add presenter notes
+
+- `class:` or `.class[]` to add CSS classes to slides/content
+
+- And more...
 
 ---
 
@@ -306,10 +330,16 @@ opaque_box(
 
 - Easy integration of code and output!!
 
+--
+
 - `R Markdown` to the rescue
-  + Combines the best of markdown-driven content creation with the power of the `R` language
-  + Native support for over 30 languages, including `R` and `python`
-  + Document configuration via YAML front-matter
+  + Combines markdown-driven content creation with the power of the `R` language
+  + Native support for over 30 languages, including `python`
+  + Simple document configuration via YAML front-matter
+  
+--
+  
+- `{xaringan}`/`{xaringanExtra}` make things easy and provide most/all of the presentation features you'd expect, and some you didn't realize you needed...
 
 ---
 
@@ -326,40 +356,62 @@ img(src = "imgs/rmarkdown.png", class = "rmd1 move-rmd-left")
 tags$button(
   span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit", 
        class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 knit-btn knit-btn-appear")
-img(src = "imgs/rmarkdown-doc.png", class = "w-40 rmd-doc rmd-appear")
-```
-
----
-
-```{r echo=FALSE}
-img(src = "imgs/rmarkdown.png", class = "rmd2")
-tags$button(
-  span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit", 
-       class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 knit-btn knit-btn-fade")
-tags$button(
-  span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
-       class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1 pandoc-btn pandoc-appear")
-img(src = "imgs/rmarkdown-doc.png", class = "w-40 rmd-doc spin-rmd")
-img(src = "imgs/markdown-doc.png", class = "w-40 md-doc md-appear")
+  class = "f3 br3 bw2 pl3 pr3 pt2 pb2 knit-btn knit-btn-appear")
+img(src = "imgs/xaringan-rmd.png", class = "w-40 rmd-doc rmd-appear")
 ```
 
 ---
 
 ```{r echo=FALSE}
 img(src = "imgs/rmarkdown.png", class = "rmd2 rmd-fade")
-img(src = "imgs/xaringan.png", class = "xaringan xaringan-appear")
+img(src = "imgs/markdown.png", class = "md md-appear")
+tags$button(
+  span(img(src = "imgs/knitr.png", class = "knit-btn-logo"), "Knit", 
+       class = "tc"),
+  class = "f3 br3 bw2 pl3 pr3 pt2 pb2 knit-btn knit-btn-fade")
 tags$button(
   span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
        class = "tc"),
-  class = "f3 br3 pl3 pr3 pt2 pb2 db mt1 pandoc-btn pandoc-fade")
-img(src = "imgs/markdown-doc.png", class = "w-40 md-doc md-spin")
-img(src = "imgs/html-doc.png", class = "w-40 html-doc html-doc-appear")
+  class = "f3 br3 bw2 pl3 pr3 pt2 pb2 db mt1 pandoc-btn pandoc-appear")
+img(src = "imgs/xaringan-rmd.png", class = "w-40 rmd-doc spin-rmd")
+img(src = "imgs/markdown-doc.png", class = "w-40 md-doc md-appear")
 ```
 
 ---
+
+```{r echo=FALSE}
+img(src = "imgs/markdown.png", class = "md pandoc-fade")
+img(src = "imgs/html.png", class = "html-logo html-appear")
+tags$button(
+  span(img(src = "imgs/pandoc.png", class = "pandoc-btn-logo"), "Pandoc", 
+       class = "tc"),
+  class = "f3 br3 bw2 pl3 pr3 pt2 pb2 db mt1 pandoc-btn pandoc-fade")
+img(src = "imgs/markdown-doc.png", class = "w-40 md-doc md-spin")
+img(src = "imgs/xaringan-pres.png", class = "w-50 html-doc html-doc-appear")
+```
+
+---
+
+# Lucky for us...
+
+.pull-left.f3.lh-copy[
+
+- All of this magic happens behind the scenes thanks to `{xaringan}`
+
+- From our perspective, we just add content to our presentation and all of the document transformations happen
+
+- RStudio IDE support for live serving and real-time updating
+
+- Like PowerPoint/Keynote/Beamer, there are many nice templates offered
+]
+
+```{r echo=FALSE}
+img(src = "imgs/xaringan.png", id = "xaringan-logo")
+```
+
+---
+
+class: hide-count
 
 ```{r echo=FALSE}
 xaringanExtra::embed_xaringan("https://slides.yihui.org/xaringan/#1")
@@ -367,8 +419,37 @@ xaringanExtra::embed_xaringan("https://slides.yihui.org/xaringan/#1")
 
 ---
 
+.pull-left.lh-copy[
+### .red[{xaringan}] Features
+- Embedded code chunks
+- Autoplay
+- LaTeX math support
+- Code highlighting
+- Countdown timers
+- Lots of themes
+- Etc.
+]
+
+--
+
+.pull-left.lh-copy[
+### .blue[{xaringanExtra}] Features
+- Tile view
+- Editable slides
+- Copy-to-clipboard
+- Slide transitions/animations
+- Webcam support
+- Live broadcasting
+- Etc.
+
+.footnote[Use {xaringanthemer} for easy custom themeing of your slides]
+]
+
+---
+
 background-image: url("imgs/code.jpeg")
 background-size: cover
+class: hide-count
 
 ```{r echo = FALSE}
 opaque_box(
@@ -381,7 +462,7 @@ opaque_box(
 
 class: lh-solid
 
-# Important Resources
+# Additional Resources
 
 - .f3[[`{xaringanthemer}`](https://pkg.garrickadenbuie.com/xaringanthemer/) - .i[Give your xaringan slides some style with xaringanthemer]]
 
@@ -396,3 +477,23 @@ class: lh-solid
 - .f3[[Unsplash](https://unsplash.com/) - .i[Free high-resolution photos]]
 
 - .f3[[FontAwesome](https://fontawesome.com/) - .i[The web's most popular icon set and toolkit]]
+
+---
+
+class: lh-solid
+
+# Acknowledgements
+
+All of this made possible by the open-source work of:
+
+- .f3[Ole Petter Bang for .remark-font[remark.js]]
+
+- .f3[J.J. Allaire .i[et al.] for `{rmarkdown}`]
+
+- .f3[Yihui Xie for `{xaringan}`]
+
+- .f3[Garrick Aden-Buie for `{xaringanExtra}` and `{xaringanthemer}`]
+
+.bg-light-yellow.ba.br3.f3.ph4.bw1.tc.shadow-5[The power of Open Soure is the power of the people. The people rule. .i.tr[
+-Philippe Kahn
+]]

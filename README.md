@@ -1,9 +1,7 @@
 
 # HTML Presentations or: How I learned to Stop Worrying and Love the Web
 
-<!--html_preserve-->
-
-<img src="docs/share-card.png" style="box-shadow: 10px 5px 10px;"/><!--/html_preserve-->
+![](docs/share-card.png)
 
 ### Building impressive presentations with web technologies
 

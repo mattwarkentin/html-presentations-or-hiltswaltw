@@ -11,12 +11,7 @@ knitr::opts_chunk$set(
 
 # HTML Presentations or: How I learned to Stop Worrying and Love the Web
 
-```{r echo=FALSE}
-htmltools::img(
-  src = "docs/share-card.png",
-  style = "box-shadow: 10px 5px 10px;"
-  )
-```
+![](docs/share-card.png)
 
 ### Building impressive presentations with web technologies
 

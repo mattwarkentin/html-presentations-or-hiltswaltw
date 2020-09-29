@@ -143,7 +143,23 @@ class: highlight-last-item
 
 --
 
-- I am not very creative (with a GUI, at least)
+- We should try to adhere to the __separation of concerns__ design principle
+  + [CSS Zen Garden Example](http://www.csszengarden.com/)
+
+---
+
+background-image: url(https://images.unsplash.com/photo-1530543787849-128d94430c6b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)
+background-size: cover
+class: hide-count lh-copy
+
+```{r echo=FALSE}
+opaque_box(
+  h2("Separation of Concerns"),
+  p("Separation of content and presentation is the <strong>separation of concerns design principle</strong> as applied to the authoring and presentation of content. Under this principle, visual and design aspects (presentation and style) are separated from the core material and structure (content) of a document.", class = "f2 lh-copy")
+)
+```
+
+.f3.i[[Separation of content and presentation - Wikipedia](https://en.wikipedia.org/wiki/Separation_of_content_and_presentation)]
 
 ---
 
@@ -151,15 +167,15 @@ class: highlight-last-item
 
 # What do we want?
 
+- Disentangle our focus on content and style
+
+--
+
 - Diffable plain-text files
 
 --
 
-- Focus more on content than format
-
---
-
-- Good defaults, quick victories
+- Good defaults, fast prototyping, quick victories
 
 --
 
@@ -189,17 +205,17 @@ pdf <- "<img src=https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_f
 html <- "<img src=imgs/html.png class='w-20'>"
 ```
 
-```{r reactable-table1, echo=FALSE}
+```{r reactable-table, echo=FALSE}
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
   "", kp, pdf, html,
-  "Plain-text files", no, "", "",
-  "Content focused", no, "", "",
-  "Good defaults", yes, "", "",
-  "Transportability", no, "", "",
-  "Integrate code/output", no, "", "",
-  "Highly configurable", yes, "", "",
-  "Dynamic content", maybe, "", ""
+  "Separation of concerns", "", "", "",
+  "Plain-text files", "", "", "",
+  "Good defaults", "", "", "",
+  "Transportability", "", "", "",
+  "Integrate code/output", "", "", "",
+  "Highly configurable", "", "", "",
+  "Dynamic content", "", "", ""
 ) %>% 
   reactable(
     defaultColDef = colDef(html = TRUE, align = "center"),
@@ -213,19 +229,137 @@ tribble(
 
 ---
 
-class: hide-count
+```{r reactable-table1, echo=FALSE}
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
+  "Separation of concerns", no, yes, yes,
+  "Plain-text files", "", "", "",
+  "Good defaults", "", "", "",
+  "Transportability", "", "", "",
+  "Integrate code/output", "", "", "",
+  "Highly configurable", "", "", "",
+  "Dynamic content", "", "", ""
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+---
 
 ```{r reactable-table2, echo=FALSE}
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
   "", kp, pdf, html,
-  "Plain-text files", no, yes, "",
-  "Content focused", no, yes, "",
-  "Good defaults", yes, yes, "",
-  "Transportability", no, yes, "",
-  "Integrate code/output", no, yes, "",
-  "Highly configurable", yes, no, "",
-  "Dynamic content", maybe, no, ""
+  "Separation of concerns", no, yes, yes,
+  "Plain-text files", no, yes, yes,
+  "Good defaults", "", "", "",
+  "Transportability", "", "", "",
+  "Integrate code/output", "", "", "",
+  "Highly configurable", "", "", "",
+  "Dynamic content", "", "", ""
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+---
+
+```{r reactable-table3, echo=FALSE}
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
+  "Separation of concerns", no, yes, yes,
+  "Plain-text files", no, yes, yes,
+  "Good defaults", yes, yes, yes,
+  "Transportability", "", "", "",
+  "Integrate code/output", "", "", "",
+  "Highly configurable", "", "", "",
+  "Dynamic content", "", "", ""
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+---
+
+```{r reactable-table4, echo=FALSE}
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
+  "Separation of concerns", no, yes, yes,
+  "Plain-text files", no, yes, yes,
+  "Good defaults", yes, yes, yes,
+  "Transportability", no, yes, yes,
+  "Integrate code/output", "", "", "",
+  "Highly configurable", "", "", "",
+  "Dynamic content", "", "", ""
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+---
+
+```{r reactable-table5, echo=FALSE}
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
+  "Separation of concerns", no, yes, yes,
+  "Plain-text files", no, yes, yes,
+  "Good defaults", yes, yes, yes,
+  "Transportability", no, yes, yes,
+  "Integrate code/output", no, yes, yes,
+  "Highly configurable", "", "", "",
+  "Dynamic content", "", "", ""
+) %>% 
+  reactable(
+    defaultColDef = colDef(html = TRUE, align = "center"),
+    columns = list(
+      req = colDef("", width = 400, html = FALSE, align = "left")
+    ), 
+    class = "feature-table",
+    sortable = FALSE
+  )
+```
+
+---
+
+```{r reactable-table6, echo=FALSE}
+tribble(
+  ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
+  "", kp, pdf, html,
+  "Separation of concerns", no, yes, yes,
+  "Plain-text files", no, yes, yes,
+  "Good defaults", yes, yes, yes,
+  "Transportability", no, yes, yes,
+  "Integrate code/output", no, yes, yes,
+  "Highly configurable", yes, no, yes,
+  "Dynamic content", "", "", ""
 ) %>% 
   reactable(
     defaultColDef = colDef(html = TRUE, align = "center"),
@@ -241,12 +375,12 @@ tribble(
 
 class: hide-count
 
-```{r reactable-table3, echo=FALSE}
+```{r reactable-table-full, echo=FALSE}
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
   "", kp, pdf, html,
+  "Separation of concerns", no, yes, yes,
   "Plain-text files", no, yes, yes,
-  "Content focused", no, yes, yes,
   "Good defaults", yes, yes, yes,
   "Transportability", no, yes, yes,
   "Integrate code/output", no, yes, yes,
@@ -281,28 +415,32 @@ img(src = "imgs/html.png", id = "html-logo")
 
 .i[So what does that mean?]
 
-- Write slide content in simple markdown language*
+.blue.b[Concern 1:] Write slide content using simple markdown language*
 
-- View presentation in a browser as a web page
+.green.b[Concern 2:] Customize visual aspect with CSS (defaults are good)
+
+.f4.gray[*.remark-font[remark.js] handles translating the markdown to HTML and forming the slideshow structure]
 
 ---
 
-# Building on standard Markdown...
+## Building on standard Markdown...
 
 If you already know how to use standard Markdown you are 90% of the way there...
 
 --
 
-- `---` to separate slides
+.remark-font[remark.js] adds more markdown-like syntax to help out:
+
+.f3[- `---` to separate slides
 
 - `--` to reveal content slide-by-slide
 
 - `???` to add presenter notes
 
-- `class:` or `.class[]` to add CSS classes to slides/content
+- `class:` or `.class[]` to add CSS classes to slides or content, respectively
 
-- And more...
-
+- And a few more easy-to-learn snippets...
+]
 ---
 
 class: hide-count
@@ -328,6 +466,8 @@ opaque_box(
 
 # But what is missing?
 
+--
+
 - Easy integration of code and output!!
 
 --
@@ -339,7 +479,7 @@ opaque_box(
   
 --
   
-- `{xaringan}`/`{xaringanExtra}` make things easy and provide most/all of the presentation features you'd expect, and some you didn't realize you needed...
+- `{xaringan}` is a `R` package that brings it all together by combining `{rmarkdown}` and .remark-font.f1[remark.js]
 
 ---
 
@@ -396,9 +536,9 @@ img(src = "imgs/xaringan-pres.png", class = "w-50 html-doc html-doc-appear")
 
 .pull-left.f3.lh-copy[
 
-- All of this magic happens behind the scenes thanks to `{xaringan}`
+- All of the magic happens behind the scenes thanks to `{xaringan}`
 
-- From our perspective, we just add content to our presentation and all of the document transformations happen
+- From our perspective, we just simply add content to our presentation and all intermediate steps are managed for us
 
 - RStudio IDE support for live serving and real-time updating
 
@@ -457,6 +597,25 @@ opaque_box(
   h1("Live Coding Demonstration", class = "pt6")
 )
 ```
+
+---
+
+## Summary
+
+- HTML presentations allow us to adhere to the separation of concerns design principle and embrace the full suite of web technologies
+
+--
+
+- .remark-font.f2[remark.js] is a javascript library that makes it easy to build HTML presentations using .i[easy-to-learn] markdown syntax
+
+--
+
+- `R Markdown` simplifies generating HTML documents and automatically integrating code and output with prose
+
+--
+
+- `{xaringan}` combines `R Markdown` and .remark-font.f2[remark.js]
+  + .f3[`{xaringan}` + `{xaringanExtra}` provide most/all of the presentation features you'd expect, and some you didn't realize you needed...]
 
 ---
 

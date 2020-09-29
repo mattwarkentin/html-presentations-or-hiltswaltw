@@ -229,6 +229,8 @@ tribble(
 
 ---
 
+class: middle hide-count
+
 ```{r reactable-table1, echo=FALSE}
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
@@ -252,6 +254,8 @@ tribble(
 ```
 
 ---
+
+class: middle hide-count
 
 ```{r reactable-table2, echo=FALSE}
 tribble(
@@ -277,6 +281,8 @@ tribble(
 
 ---
 
+class: middle hide-count
+
 ```{r reactable-table3, echo=FALSE}
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
@@ -300,6 +306,8 @@ tribble(
 ```
 
 ---
+
+class: middle hide-count
 
 ```{r reactable-table4, echo=FALSE}
 tribble(
@@ -325,6 +333,8 @@ tribble(
 
 ---
 
+class: middle hide-count
+
 ```{r reactable-table5, echo=FALSE}
 tribble(
   ~req, ~`PowerPoint/<br/>Keynote`, ~Beamer, ~HTML,
@@ -348,6 +358,8 @@ tribble(
 ```
 
 ---
+
+class: middle hide-count
 
 ```{r reactable-table6, echo=FALSE}
 tribble(
@@ -483,6 +495,8 @@ opaque_box(
 
 ---
 
+class: middle hide-count
+
 # How it all works...
 
 ```{r echo=FALSE}
@@ -490,6 +504,8 @@ img(src = "imgs/rmarkdown.png", class = "rmd1")
 ```
 
 ---
+
+class: middle hide-count
 
 ```{r echo=FALSE}
 img(src = "imgs/rmarkdown.png", class = "rmd1 move-rmd-left")
@@ -501,6 +517,8 @@ img(src = "imgs/xaringan-rmd.png", class = "w-40 rmd-doc rmd-appear")
 ```
 
 ---
+
+class: middle hide-count
 
 ```{r echo=FALSE}
 img(src = "imgs/rmarkdown.png", class = "rmd2 rmd-fade")
@@ -518,6 +536,8 @@ img(src = "imgs/markdown-doc.png", class = "w-40 md-doc md-appear")
 ```
 
 ---
+
+class: middle hide-count
 
 ```{r echo=FALSE}
 img(src = "imgs/markdown.png", class = "md pandoc-fade")

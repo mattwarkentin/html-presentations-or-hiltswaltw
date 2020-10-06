@@ -127,6 +127,8 @@ class: highlight-last-item
 
 # Why, though?
 
+--
+
 - Making presentations should be fun
 
 --
@@ -167,6 +169,8 @@ class: highlight-last-item
 
 # What do we want?
 
+--
+
 - Disentangle our focus on content and style
 
 --
@@ -187,7 +191,7 @@ class: highlight-last-item
 
 --
 
-- Ability to include dynamic content
+- Ability to include dynamic/interactive content
 
 ---
 
@@ -495,7 +499,7 @@ opaque_box(
 
 ---
 
-class: middle hide-count
+class: hide-count
 
 # How it all works...
 
@@ -620,6 +624,8 @@ opaque_box(
 
 ---
 
+class: highlight-last-item
+
 ## Summary
 
 - HTML presentations allow us to adhere to the separation of concerns design principle and embrace the full suite of web technologies
@@ -645,17 +651,29 @@ class: lh-solid
 
 - .f3[[`{xaringanthemer}`](https://pkg.garrickadenbuie.com/xaringanthemer/) - .i[Give your xaringan slides some style with xaringanthemer]]
 
+--
+
 - .f3[[`{xaringanExtra}`](https://pkg.garrickadenbuie.com/xaringanExtra/#/) - .i[A playground of extensions for xaringan]]
+
+--
 
 - .f3[[`remark.js` Wiki](https://github.com/gnab/remark/wiki)]
 
+--
+
 - .f3[[Tachyons](https://tachyons.io/docs/) - .i[Create fast loading, highly readable, and 100% responsive interfaces with as little css as possible]]
+
+--
 
 - .f3[[Google Fonts](https://fonts.google.com/) - .i[Making the web more beautiful, fast, and open through great typography]]
 
+--
+
 - .f3[[Unsplash](https://unsplash.com/) - .i[Free high-resolution photos]]
 
-- .f3[[FontAwesome](https://fontawesome.com/) - .i[The web's most popular icon set and toolkit]]
+--
+
+- .f3[[`{fontawesome}`](https://github.com/rstudio/fontawesome) - .i[The web's most popular icon set and toolkit]]
 
 ---
 

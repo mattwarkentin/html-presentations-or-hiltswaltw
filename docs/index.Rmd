@@ -146,7 +146,8 @@ class: highlight-last-item
 --
 
 - We should try to adhere to the __separation of concerns__ design principle
-  + [CSS Zen Garden Example](http://www.csszengarden.com/)
+
+.footnote[[CSS Zen Garden Example](http://www.csszengarden.com/)]
 
 ---
 
@@ -157,7 +158,7 @@ class: hide-count lh-copy
 ```{r echo=FALSE}
 opaque_box(
   h2("Separation of Concerns"),
-  p("Separation of content and presentation is the <strong>separation of concerns design principle</strong> as applied to the authoring and presentation of content. Under this principle, visual and design aspects (presentation and style) are separated from the core material and structure (content) of a document.", class = "f2 lh-copy")
+  p(".i.b[Separation of content and presentation] .dark-gray[is the separation of concerns design principle as applied to the authoring and presentation of content. Under this principle, visual and design aspects (presentation and style) are separated from the core material and structure (content) of a document.]", class = "f2 lh-copy")
 )
 ```
 

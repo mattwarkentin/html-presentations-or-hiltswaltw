@@ -3,7 +3,7 @@
 
 ![](docs/share-card.png)
 
-### Building impressive presentations with web technologies
+### Building impressive presentations with modern web technologies
 
 **Author**: Matthew T. Warkentin (<warkentin@lunenfeld.ca>)
 

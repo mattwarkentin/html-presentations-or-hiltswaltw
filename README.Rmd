@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 
 ![](docs/share-card.png)
 
-### Building impressive presentations with web technologies
+### Building impressive presentations with modern web technologies
 
 __Author__: Matthew T. Warkentin (<warkentin@lunenfeld.ca>)
 
